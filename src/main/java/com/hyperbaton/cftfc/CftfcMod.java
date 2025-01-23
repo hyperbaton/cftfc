@@ -1,9 +1,11 @@
 package com.hyperbaton.cftfc;
 
+import com.hyperbaton.cft.CftRegistry;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.server.ServerAboutToStartEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +29,8 @@ public class CftfcMod
     public CftfcMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        CftfcRegistry.NEEDS_CODEC.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -56,6 +60,7 @@ public class CftfcMod
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
+        //CftfcRegistry.NEEDS = CftfcRegistry.getNeedsRegistry(event.getServer().registryAccess());
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
