@@ -17,9 +17,9 @@ public class TemperatureNeedSatisfier extends NeedSatisfier<TemperatureNeed> {
 
         float averageTemperature = Climate.getAverageTemperature(mob.level(), mob.getOnPos());
 
-        float currentTemperature = Climate.getTemperature(mob.level(), mob.getOnPos());
+        float currentTemperature = Climate.getInstantTemperature(mob.level(), mob.getOnPos());
 
-        Season currentSeason = Calendars.get(mob.level()).getCalendarMonthOfYear().getSeason();
+        Season currentSeason = Calendars.get(mob.level()).getAbsoluteCalendarMonthOfYear().getSeason();
 
         if (adequateAverageTemperature(averageTemperature) && adequateCurrentTemperature(currentTemperature, currentSeason)) {
             super.satisfy(mob);

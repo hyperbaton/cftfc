@@ -13,7 +13,7 @@ public class RainfallNeedSatisfier extends NeedSatisfier<RainfallNeed> {
     @Override
     public boolean satisfy(XoonglinEntity mob) {
 
-        float rainfall = Climate.getRainfall(mob.level(), mob.getOnPos());
+        float rainfall = Climate.getAverageRainfall(mob.level(), mob.getOnPos());
 
         if (rainfall >= this.getNeed().getMinRainfall() && rainfall <= this.getNeed().getMaxRainfall()) {
             super.satisfy(mob);

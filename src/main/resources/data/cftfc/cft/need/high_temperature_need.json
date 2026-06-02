@@ -1,0 +1,21 @@
+{
+  "id": "cftfc:high_temperature_need",
+  "type": "cftfc:temperature",
+  "damage": 0.4,
+  "damage_threshold": 0.5,
+  "provided_happiness": 5,
+  "satisfaction_threshold": 0.75,
+  "frequency": 0.1,
+  "min_average_temperature": 20,
+  "max_average_temperature": 50,
+  "seasonal_limits": {
+    "min_spring_temperature": 0.0,
+    "max_spring_temperature": 15.0,
+    "min_summer_temperature": 10.0,
+    "max_summer_temperature": 30.0,
+    "min_fall_temperature": 5.0,
+    "max_fall_temperature": 20.0,
+    "min_winter_temperature": -10.0,
+    "max_winter_temperature": 5.0
+  }
+}

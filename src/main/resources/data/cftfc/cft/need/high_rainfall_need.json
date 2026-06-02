@@ -1,0 +1,11 @@
+{
+  "id": "cftfc:high_rainfall_need",
+  "type": "cftfc:rainfall",
+  "damage": 0.4,
+  "damage_threshold": 0.5,
+  "provided_happiness": 5,
+  "satisfaction_threshold": 0.75,
+  "frequency": 0.1,
+  "min_rainfall": 300,
+  "max_rainfall": 400
+}

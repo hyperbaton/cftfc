@@ -1,0 +1,32 @@
+{
+  "id": "cftfc:tropical_settler",
+  "maxHappiness": 100.0,
+  "matingHappinessThreshold": 5.0,
+  "spontaneouslySpawnPopulation": 3,
+  "needs": [
+    "cft:potato_need",
+    "cft:wood_logs_need",
+    "cftfc:tropical_hut_need",
+    "cftfc:high_temperature_need",
+    "cftfc:high_rainfall_need"
+  ],
+  "upgrades": [
+    {
+      "nextClass": "cft:citizen",
+      "requiredHappiness": 20,
+      "requiredNeeds": [
+        {
+          "need": "cft:potato_need",
+          "satisfactionThreshold": 0.70
+        }
+      ],
+      "socialStructureRequirements": [
+        {
+          "socialClass": "cftfc:tropical_settler",
+          "percentage": 0.30
+        }
+      ]
+    }
+  ],
+  "downgrades": []
+}
