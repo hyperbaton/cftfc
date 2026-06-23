@@ -1,0 +1,8 @@
+{
+  "gui.cftfc.need_type.temperature": "Temperature",
+  "gui.cftfc.need_type.rainfall": "Rainfall",
+  "cftfc:tropical_settler": "Tropical Settler",
+  "cftfc:high_temperature_need": "High Temperature",
+  "cftfc:high_rainfall_need": "High Rainfall",
+  "cftfc:tropical_hut_need": "Tropical Hut"
+}
