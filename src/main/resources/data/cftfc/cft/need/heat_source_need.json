@@ -1,0 +1,12 @@
+{
+  "id": "cftfc:heat_source_need",
+  "type": "cftfc:heat_source",
+  "damage": 0.3,
+  "damage_threshold": 0.5,
+  "provided_happiness": 4,
+  "satisfaction_threshold": 0.75,
+  "frequency": 0.1,
+  "search_radius": 12,
+  "temperature_threshold": 10.0,
+  "min_source_temperature": 200.0
+}

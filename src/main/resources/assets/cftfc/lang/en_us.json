@@ -1,8 +1,10 @@
 {
   "gui.cftfc.need_type.temperature": "Temperature",
   "gui.cftfc.need_type.rainfall": "Rainfall",
+  "gui.cftfc.need_type.heat_source": "Heat Source",
   "cftfc:tropical_settler": "Tropical Settler",
   "cftfc:high_temperature_need": "High Temperature",
   "cftfc:high_rainfall_need": "High Rainfall",
-  "cftfc:tropical_hut_need": "Tropical Hut"
+  "cftfc:tropical_hut_need": "Tropical Hut",
+  "cftfc:heat_source_need": "Heat Source"
 }

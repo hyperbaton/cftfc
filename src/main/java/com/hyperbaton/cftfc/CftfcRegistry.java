@@ -2,6 +2,7 @@ package com.hyperbaton.cftfc;
 
 import com.hyperbaton.cft.event.CftDatapackRegistryEvents;
 import com.hyperbaton.cft.need.Need;
+import com.hyperbaton.cftfc.need.HeatSourceNeed;
 import com.hyperbaton.cftfc.need.RainfallNeed;
 import com.hyperbaton.cftfc.need.TemperatureNeed;
 import com.mojang.serialization.Codec;
@@ -18,4 +19,7 @@ public class CftfcRegistry {
 
     public static DeferredHolder<Codec<? extends Need>, Codec<RainfallNeed>> RAINFALL_NEED =
             NEEDS_CODEC.register("rainfall", () -> RainfallNeed.RAINFALL_NEED_CODEC);
+
+    public static DeferredHolder<Codec<? extends Need>, Codec<HeatSourceNeed>> HEAT_SOURCE_NEED =
+            NEEDS_CODEC.register("heat_source", () -> HeatSourceNeed.HEAT_SOURCE_NEED_CODEC);
 }

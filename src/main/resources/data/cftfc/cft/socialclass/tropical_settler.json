@@ -8,7 +8,8 @@
     "cft:wood_logs_need",
     "cftfc:tropical_hut_need",
     "cftfc:high_temperature_need",
-    "cftfc:high_rainfall_need"
+    "cftfc:high_rainfall_need",
+    "cftfc:heat_source_need"
   ],
   "upgrades": [
     {
