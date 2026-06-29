@@ -6,40 +6,5 @@
   "provided_happiness": 8,
   "satisfaction_threshold": 0.95,
   "frequency": 1.0,
-  "floorBlocks": [
-    {
-      "tagBlock": "minecraft:planks",
-      "minQuantity": 0,
-      "maxQuantity": 500,
-      "minPercentage": 0.0,
-      "maxPercentage": 1.0
-    }
-  ],
-  "wallBlocks": [
-    {
-      "block": "tfc:wattle/unstained",
-      "minQuantity": 0,
-      "maxQuantity": 500,
-      "minPercentage": 0.0,
-      "maxPercentage": 1.0
-    }
-  ],
-  "interiorBlocks": [
-    {
-      "block": "minecraft:air",
-      "minQuantity": 0,
-      "maxQuantity": 500,
-      "minPercentage": 0.0,
-      "maxPercentage": 1.0
-    }
-  ],
-  "roofBlocks": [
-    {
-      "tagBlock": "minecraft:wooden_stairs",
-      "minQuantity": 0,
-      "maxQuantity": 500,
-      "minPercentage": 0.0,
-      "maxPercentage": 1.0
-    }
-  ]
+  "required_structure": "cftfc:tropical_hut"
 }

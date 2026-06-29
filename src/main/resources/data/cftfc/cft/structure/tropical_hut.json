@@ -1,0 +1,58 @@
+{
+  "type": "cft:house",
+  "id": "cftfc:tropical_hut",
+  "key_block_tag": "minecraft:doors",
+  "max_users": 1,
+  "requires_container": true,
+  "priority": 0,
+  "floorBlocks": [
+    {
+      "tagBlock": "minecraft:planks",
+      "minQuantity": 0,
+      "maxQuantity": 500,
+      "minPercentage": 0.0,
+      "maxPercentage": 1.0
+    }
+  ],
+  "wallBlocks": [
+    {
+      "block": "tfc:wattle/unstained",
+      "minQuantity": 0,
+      "maxQuantity": 500,
+      "minPercentage": 0.0,
+      "maxPercentage": 1.0
+    },
+    {
+      "tagBlock": "minecraft:doors",
+      "minQuantity": 1,
+      "maxQuantity": 2,
+      "minPercentage": 0.0,
+      "maxPercentage": 1.0
+    }
+  ],
+  "interiorBlocks": [
+    {
+      "block": "minecraft:air",
+      "minQuantity": 0,
+      "maxQuantity": 500,
+      "minPercentage": 0.0,
+      "maxPercentage": 1.0
+    },
+    {
+      "block": "minecraft:chest",
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "minPercentage": 0.0,
+      "maxPercentage": 1.0
+    }
+  ],
+  "roofBlocks": [
+    {
+      "tagBlock": "minecraft:wooden_stairs",
+      "minQuantity": 0,
+      "maxQuantity": 500,
+      "minPercentage": 0.0,
+      "maxPercentage": 1.0
+    }
+  ]
+}

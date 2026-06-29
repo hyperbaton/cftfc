@@ -6,5 +6,6 @@
   "cftfc:high_temperature_need": "High Temperature",
   "cftfc:high_rainfall_need": "High Rainfall",
   "cftfc:tropical_hut_need": "Tropical Hut",
-  "cftfc:heat_source_need": "Heat Source"
+  "cftfc:heat_source_need": "Heat Source",
+  "cftfc:tropical_hut": "Tropical Hut"
 }
