@@ -23,6 +23,7 @@ public class HeatSourceNeed extends Need {
             Codec.DOUBLE.fieldOf("satisfaction_threshold").forGetter(HeatSourceNeed::getSatisfactionThreshold),
             Codec.DOUBLE.fieldOf("frequency").forGetter(HeatSourceNeed::getFrequency),
             Codec.BOOL.optionalFieldOf("hidden", DEFAULT_HIDDEN).forGetter(HeatSourceNeed::isHidden),
+            Codec.BOOL.optionalFieldOf("bonus", DEFAULT_BONUS).forGetter(HeatSourceNeed::isBonus),
             ResourceLocation.CODEC.optionalFieldOf("icon").forGetter(Need::getIcon),
             Codec.INT.fieldOf("search_radius").forGetter(HeatSourceNeed::getSearchRadius),
             Codec.DOUBLE.optionalFieldOf("temperature_threshold").forGetter(HeatSourceNeed::getTemperatureThreshold),
@@ -36,11 +37,11 @@ public class HeatSourceNeed extends Need {
     private final double maxSourceTemperature;
 
     public HeatSourceNeed(String id, double damage, double damageThreshold, double providedHappiness,
-                          double satisfactionThreshold, double frequency, boolean hidden,
+                          double satisfactionThreshold, double frequency, boolean hidden, boolean bonus,
                           Optional<ResourceLocation> icon,
                           int searchRadius, Optional<Double> temperatureThreshold,
                           double minSourceTemperature, double maxSourceTemperature) {
-        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, icon);
+        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, bonus, icon);
         this.searchRadius = searchRadius;
         this.temperatureThreshold = temperatureThreshold;
         this.minSourceTemperature = minSourceTemperature;

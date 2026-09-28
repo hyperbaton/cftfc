@@ -37,6 +37,8 @@ A simple need that checks what is the nominal rainfall in the location of the Xo
   go from 1 to 0.
 - `hidden`: An optional boolean indicating if this need should be hidden from interfaces. Its value is `false`
   by default.
+- `bonus`: _(Optional, default: false)_ If true, the need only adds happiness when satisfied and never
+  subtracts it when unsatisfied — useful for festivals or luxuries.
 - `min_rainfall`: The minimum value of the rainfall in the Xoonglin's location for the need to be satisfied.
 - `max_rainfall`: The maximum value of the rainfall in the Xoonglin's location for the need to be satisfied.
 </details>

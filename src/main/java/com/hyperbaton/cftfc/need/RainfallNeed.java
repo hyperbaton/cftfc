@@ -23,6 +23,7 @@ public class RainfallNeed extends Need {
             Codec.DOUBLE.fieldOf("satisfaction_threshold").forGetter(RainfallNeed::getSatisfactionThreshold),
             Codec.DOUBLE.fieldOf("frequency").forGetter(RainfallNeed::getFrequency),
             Codec.BOOL.optionalFieldOf("hidden", DEFAULT_HIDDEN).forGetter(RainfallNeed::isHidden),
+            Codec.BOOL.optionalFieldOf("bonus", DEFAULT_BONUS).forGetter(RainfallNeed::isBonus),
             ResourceLocation.CODEC.optionalFieldOf("icon").forGetter(Need::getIcon),
             Codec.DOUBLE.fieldOf("min_rainfall").forGetter(RainfallNeed::getMinRainfall),
             Codec.DOUBLE.fieldOf("max_rainfall").forGetter(RainfallNeed::getMaxRainfall)
@@ -32,10 +33,10 @@ public class RainfallNeed extends Need {
     private double maxRainfall;
 
     public RainfallNeed(String id, double damage, double damageThreshold, double providedHappiness,
-                        double satisfactionThreshold, double frequency, boolean hidden,
+                        double satisfactionThreshold, double frequency, boolean hidden, boolean bonus,
                         Optional<ResourceLocation> icon,
                         double minRainfall, double maxRainfall) {
-        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, icon);
+        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, bonus, icon);
         this.minRainfall = minRainfall;
         this.maxRainfall = maxRainfall;
     }

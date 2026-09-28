@@ -19,7 +19,7 @@ public class RainfallNeedSatisfier extends NeedSatisfier<RainfallNeed> {
             super.satisfy(mob);
         } else {
             this.unsatisfy(this.getNeed().getFrequency(), mob);
-            mob.decreaseHappiness(this.getNeed().getProvidedHappiness(), this.getNeed().getFrequency());
+            mob.decreaseHappiness(this.getNeed());
             return false;
         }
         return true;

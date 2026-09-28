@@ -25,7 +25,7 @@ public class HeatSourceNeedSatisfier extends NeedSatisfier<HeatSourceNeed> {
         }
 
         this.unsatisfy(this.getNeed().getFrequency(), mob);
-        mob.decreaseHappiness(this.getNeed().getProvidedHappiness(), this.getNeed().getFrequency());
+        mob.decreaseHappiness(this.getNeed());
         return false;
     }
 

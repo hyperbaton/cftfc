@@ -23,6 +23,7 @@ public class TemperatureNeed extends Need {
             Codec.DOUBLE.fieldOf("satisfaction_threshold").forGetter(TemperatureNeed::getSatisfactionThreshold),
             Codec.DOUBLE.fieldOf("frequency").forGetter(TemperatureNeed::getFrequency),
             Codec.BOOL.optionalFieldOf("hidden", DEFAULT_HIDDEN).forGetter(TemperatureNeed::isHidden),
+            Codec.BOOL.optionalFieldOf("bonus", DEFAULT_BONUS).forGetter(TemperatureNeed::isBonus),
             ResourceLocation.CODEC.optionalFieldOf("icon").forGetter(Need::getIcon),
             Codec.DOUBLE.fieldOf("min_average_temperature").forGetter(TemperatureNeed::getMinAverageTemperature),
             Codec.DOUBLE.fieldOf("max_average_temperature").forGetter(TemperatureNeed::getMaxAverageTemperature),
@@ -35,11 +36,11 @@ public class TemperatureNeed extends Need {
     private final Optional<SeasonalTemperatureLimits> seasonalLimits;
 
     public TemperatureNeed(String id, double damage, double damageThreshold, double providedHappiness,
-                           double satisfactionThreshold, double frequency, boolean hidden,
+                           double satisfactionThreshold, double frequency, boolean hidden, boolean bonus,
                            Optional<ResourceLocation> icon,
                            double minAverageTemperature, double maxAverageTemperature,
                            Optional<SeasonalTemperatureLimits> seasonalLimits) {
-        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, icon);
+        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, bonus, icon);
         this.minAverageTemperature = minAverageTemperature;
         this.maxAverageTemperature = maxAverageTemperature;
         this.seasonalLimits = seasonalLimits;
