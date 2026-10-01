@@ -21,6 +21,7 @@ public class CftfcMod {
 
     public CftfcMod(IEventBus modEventBus, ModContainer modContainer) {
         CftfcRegistry.NEEDS_CODEC.register(modEventBus);
+        CftfcRegistry.NEED_CONDITIONS_CODEC.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

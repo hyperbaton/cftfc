@@ -3,7 +3,7 @@ package com.hyperbaton.cftfc.need.satisfaction;
 import com.hyperbaton.cft.entity.custom.XoonglinEntity;
 import com.hyperbaton.cft.need.satisfaction.NeedSatisfier;
 import com.hyperbaton.cftfc.need.TemperatureNeed;
-import net.dries007.tfc.util.calendar.Calendars;
+import com.hyperbaton.cftfc.util.TfcClimateHelper;
 import net.dries007.tfc.util.calendar.Season;
 import net.dries007.tfc.util.climate.Climate;
 
@@ -19,7 +19,7 @@ public class TemperatureNeedSatisfier extends NeedSatisfier<TemperatureNeed> {
 
         float currentTemperature = Climate.getInstantTemperature(mob.level(), mob.getOnPos());
 
-        Season currentSeason = Calendars.get(mob.level()).getAbsoluteCalendarMonthOfYear().getSeason();
+        Season currentSeason = TfcClimateHelper.getLocalMonth(mob.level(), mob.getOnPos()).getSeason();
 
         if (adequateAverageTemperature(averageTemperature) && adequateCurrentTemperature(currentTemperature, currentSeason)) {
             super.satisfy(mob);
