@@ -16,15 +16,7 @@ public class HeatSourceNeed extends Need {
     private static final ResourceLocation DEFAULT_ICON = ResourceLocation.fromNamespaceAndPath("tfc", "firepit");
 
     public static final Codec<HeatSourceNeed> HEAT_SOURCE_NEED_CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Codec.STRING.fieldOf("id").forGetter(HeatSourceNeed::getId),
-            Codec.DOUBLE.fieldOf("damage").forGetter(HeatSourceNeed::getDamage),
-            Codec.DOUBLE.fieldOf("damage_threshold").forGetter(HeatSourceNeed::getDamageThreshold),
-            Codec.DOUBLE.fieldOf("provided_happiness").forGetter(HeatSourceNeed::getProvidedHappiness),
-            Codec.DOUBLE.fieldOf("satisfaction_threshold").forGetter(HeatSourceNeed::getSatisfactionThreshold),
-            Codec.DOUBLE.fieldOf("frequency").forGetter(HeatSourceNeed::getFrequency),
-            Codec.BOOL.optionalFieldOf("hidden", DEFAULT_HIDDEN).forGetter(HeatSourceNeed::isHidden),
-            Codec.BOOL.optionalFieldOf("bonus", DEFAULT_BONUS).forGetter(HeatSourceNeed::isBonus),
-            ResourceLocation.CODEC.optionalFieldOf("icon").forGetter(Need::getIcon),
+            propertiesCodec(),
             Codec.INT.fieldOf("search_radius").forGetter(HeatSourceNeed::getSearchRadius),
             Codec.DOUBLE.optionalFieldOf("temperature_threshold").forGetter(HeatSourceNeed::getTemperatureThreshold),
             Codec.DOUBLE.optionalFieldOf("min_source_temperature", 0.0).forGetter(HeatSourceNeed::getMinSourceTemperature),
@@ -36,12 +28,10 @@ public class HeatSourceNeed extends Need {
     private final double minSourceTemperature;
     private final double maxSourceTemperature;
 
-    public HeatSourceNeed(String id, double damage, double damageThreshold, double providedHappiness,
-                          double satisfactionThreshold, double frequency, boolean hidden, boolean bonus,
-                          Optional<ResourceLocation> icon,
+    public HeatSourceNeed(Properties properties,
                           int searchRadius, Optional<Double> temperatureThreshold,
                           double minSourceTemperature, double maxSourceTemperature) {
-        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, bonus, icon);
+        super(properties);
         this.searchRadius = searchRadius;
         this.temperatureThreshold = temperatureThreshold;
         this.minSourceTemperature = minSourceTemperature;

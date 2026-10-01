@@ -24,9 +24,7 @@ public class TemperatureNeedSatisfier extends NeedSatisfier<TemperatureNeed> {
         if (adequateAverageTemperature(averageTemperature) && adequateCurrentTemperature(currentTemperature, currentSeason)) {
             super.satisfy(mob);
         } else {
-            this.unsatisfy(this.getNeed().getFrequency(), mob);
-            mob.decreaseHappiness(this.getNeed());
-            return false;
+            return fail(mob);
         }
 
         return true;

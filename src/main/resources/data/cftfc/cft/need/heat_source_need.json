@@ -1,5 +1,4 @@
 {
-  "id": "cftfc:heat_source_need",
   "type": "cftfc:heat_source",
   "damage": 0.3,
   "damage_threshold": 0.5,

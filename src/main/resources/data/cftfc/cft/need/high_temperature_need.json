@@ -1,5 +1,4 @@
 {
-  "id": "cftfc:high_temperature_need",
   "type": "cftfc:temperature",
   "damage": 0.4,
   "damage_threshold": 0.5,

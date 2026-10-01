@@ -16,15 +16,7 @@ public class TemperatureNeed extends Need {
     private static final ResourceLocation DEFAULT_ICON = ResourceLocation.fromNamespaceAndPath("tfc", "thermometer");
 
     public static final Codec<TemperatureNeed> TEMPERATURE_NEED_CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Codec.STRING.fieldOf("id").forGetter(TemperatureNeed::getId),
-            Codec.DOUBLE.fieldOf("damage").forGetter(TemperatureNeed::getDamage),
-            Codec.DOUBLE.fieldOf("damage_threshold").forGetter(TemperatureNeed::getDamageThreshold),
-            Codec.DOUBLE.fieldOf("provided_happiness").forGetter(TemperatureNeed::getProvidedHappiness),
-            Codec.DOUBLE.fieldOf("satisfaction_threshold").forGetter(TemperatureNeed::getSatisfactionThreshold),
-            Codec.DOUBLE.fieldOf("frequency").forGetter(TemperatureNeed::getFrequency),
-            Codec.BOOL.optionalFieldOf("hidden", DEFAULT_HIDDEN).forGetter(TemperatureNeed::isHidden),
-            Codec.BOOL.optionalFieldOf("bonus", DEFAULT_BONUS).forGetter(TemperatureNeed::isBonus),
-            ResourceLocation.CODEC.optionalFieldOf("icon").forGetter(Need::getIcon),
+            propertiesCodec(),
             Codec.DOUBLE.fieldOf("min_average_temperature").forGetter(TemperatureNeed::getMinAverageTemperature),
             Codec.DOUBLE.fieldOf("max_average_temperature").forGetter(TemperatureNeed::getMaxAverageTemperature),
             SeasonalTemperatureLimits.SEASONAL_TEMPERATURE_LIMITS_CODEC.optionalFieldOf("seasonal_limits")
@@ -35,12 +27,10 @@ public class TemperatureNeed extends Need {
     private final double maxAverageTemperature;
     private final Optional<SeasonalTemperatureLimits> seasonalLimits;
 
-    public TemperatureNeed(String id, double damage, double damageThreshold, double providedHappiness,
-                           double satisfactionThreshold, double frequency, boolean hidden, boolean bonus,
-                           Optional<ResourceLocation> icon,
+    public TemperatureNeed(Properties properties,
                            double minAverageTemperature, double maxAverageTemperature,
                            Optional<SeasonalTemperatureLimits> seasonalLimits) {
-        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, bonus, icon);
+        super(properties);
         this.minAverageTemperature = minAverageTemperature;
         this.maxAverageTemperature = maxAverageTemperature;
         this.seasonalLimits = seasonalLimits;

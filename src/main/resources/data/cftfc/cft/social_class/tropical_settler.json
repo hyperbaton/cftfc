@@ -1,0 +1,39 @@
+{
+  "max_happiness": 100.0,
+  "mating_happiness_threshold": 5.0,
+  "name_samples": [
+    "Kai", "Lani", "Makoa", "Nalu", "Iolana", "Keoni", "Malia", "Kalani",
+    "Tavi", "Moana", "Rangi", "Aroha", "Tama", "Wai", "Hina", "Manu",
+    "Ika", "Noa", "Pua", "Koa", "Mele", "Tiki", "Ana", "Ari"
+  ],
+  "spontaneously_spawn_population": 3,
+  "needs": [
+    "cftfc:tropical_hut_need",
+    "cft:potato_need",
+    "cft:wood_logs_need",
+    "cftfc:high_temperature_need",
+    "cftfc:high_rainfall_need",
+    "cftfc:heat_source_need",
+    "cft:sleep_need",
+    "cft:conversation_need"
+  ],
+  "upgrades": [
+    {
+      "next_class": "cft:citizen",
+      "required_happiness": 20,
+      "required_needs": [
+        {
+          "need": "cft:potato_need",
+          "satisfaction_threshold": 0.70
+        }
+      ],
+      "social_structure_requirements": [
+        {
+          "social_class": "cftfc:tropical_settler",
+          "percentage": 0.30
+        }
+      ]
+    }
+  ],
+  "downgrades": []
+}

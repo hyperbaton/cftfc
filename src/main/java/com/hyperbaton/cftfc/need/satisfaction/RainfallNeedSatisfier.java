@@ -18,9 +18,7 @@ public class RainfallNeedSatisfier extends NeedSatisfier<RainfallNeed> {
         if (rainfall >= this.getNeed().getMinRainfall() && rainfall <= this.getNeed().getMaxRainfall()) {
             super.satisfy(mob);
         } else {
-            this.unsatisfy(this.getNeed().getFrequency(), mob);
-            mob.decreaseHappiness(this.getNeed());
-            return false;
+            return fail(mob);
         }
         return true;
     }

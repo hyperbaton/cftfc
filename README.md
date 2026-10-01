@@ -4,6 +4,9 @@ Integration of the features of Terrafirmacraft into Care For Them
 This mod adds new Needs to Care For Them that use features from Terrafirmacraft. These needs rely on Xoonglins
 living in certain climates, based on the temperature and rainfall; as well as proximity to heat sources.
 
+All the needs below accept CFT's common need properties, such as `hidden`, `bonus`, `icon` and `active_when`;
+see the Care For Them documentation for details.
+
 ## Rainfall Need
 
 A simple need that checks what is the nominal rainfall in the location of the Xoonglin.
@@ -13,7 +16,6 @@ A simple need that checks what is the nominal rainfall in the location of the Xo
 
 ```json
 {
-  "id": "cftfc:high_rainfall_need",
   "type": "cftfc:rainfall",
   "damage": 0.4,
   "damage_threshold": 0.5,
@@ -25,7 +27,6 @@ A simple need that checks what is the nominal rainfall in the location of the Xo
 }
 ```
 
-- `id`: Identifier of this need.
 - `type`: Must be `"cftfc:rainfall"` to indicate this is a rainfall need.
 - `damage`: Amount of damage per second if the need is unsatisfied.
 - `damage_threshold`: The Xoonglin will receive damage if satisfaction falls below this level.
@@ -54,7 +55,6 @@ It is also possible to specify ranges for each season, which will take into cons
 
 ```json
 {
-  "id": "cftfc:high_temperature_need",
   "type": "cftfc:temperature",
   "damage": 0.4,
   "damage_threshold": 0.5,
@@ -94,7 +94,6 @@ The need checks the actual temperature of the heat source, so an unlit or cold f
 
 ```json
 {
-  "id": "cftfc:heat_source_need",
   "type": "cftfc:heat_source",
   "damage": 0.3,
   "damage_threshold": 0.5,

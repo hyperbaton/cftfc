@@ -2,10 +2,13 @@
   "gui.cftfc.need_type.temperature": "Temperature",
   "gui.cftfc.need_type.rainfall": "Rainfall",
   "gui.cftfc.need_type.heat_source": "Heat Source",
-  "cftfc:tropical_settler": "Tropical Settler",
-  "cftfc:high_temperature_need": "High Temperature",
-  "cftfc:high_rainfall_need": "High Rainfall",
-  "cftfc:tropical_hut_need": "Tropical Hut",
-  "cftfc:heat_source_need": "Heat Source",
-  "cftfc:tropical_hut": "Tropical Hut"
+  "social_class.cftfc.tropical_settler": "Tropical Settler",
+  "need.cftfc.high_temperature_need": "High Temperature",
+  "need.cftfc.high_temperature_need.tooltip": "Thrives in hot climates, with an average temperature between 20 and 50 °C.",
+  "need.cftfc.high_rainfall_need": "High Rainfall",
+  "need.cftfc.high_rainfall_need.tooltip": "Only feels at home in wet regions, with a yearly rainfall between 300 and 400 mm.",
+  "need.cftfc.tropical_hut_need": "Tropical Hut",
+  "need.cftfc.heat_source_need": "Heat Source",
+  "need.cftfc.heat_source_need.tooltip": "When it gets colder than 10 °C, wants a lit firepit or forge (at least 200 °C) within 12 blocks.",
+  "structure.cftfc.tropical_hut": "Tropical Hut"
 }

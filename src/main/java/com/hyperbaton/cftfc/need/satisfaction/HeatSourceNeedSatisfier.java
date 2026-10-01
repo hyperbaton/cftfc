@@ -24,9 +24,7 @@ public class HeatSourceNeedSatisfier extends NeedSatisfier<HeatSourceNeed> {
             return true;
         }
 
-        this.unsatisfy(this.getNeed().getFrequency(), mob);
-        mob.decreaseHappiness(this.getNeed());
-        return false;
+        return fail(mob);
     }
 
     private boolean isWarmEnough(XoonglinEntity mob) {

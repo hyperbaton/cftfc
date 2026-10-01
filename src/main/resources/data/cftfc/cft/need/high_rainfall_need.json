@@ -1,5 +1,4 @@
 {
-  "id": "cftfc:high_rainfall_need",
   "type": "cftfc:rainfall",
   "damage": 0.4,
   "damage_threshold": 0.5,

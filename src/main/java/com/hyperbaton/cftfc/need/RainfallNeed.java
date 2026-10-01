@@ -10,21 +10,12 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
-import java.util.Optional;
 
 public class RainfallNeed extends Need {
     private static final ResourceLocation DEFAULT_ICON = ResourceLocation.fromNamespaceAndPath("tfc", "wooden_bucket");
 
     public static final Codec<RainfallNeed> RAINFALL_NEED_CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Codec.STRING.fieldOf("id").forGetter(RainfallNeed::getId),
-            Codec.DOUBLE.fieldOf("damage").forGetter(RainfallNeed::getDamage),
-            Codec.DOUBLE.fieldOf("damage_threshold").forGetter(RainfallNeed::getDamageThreshold),
-            Codec.DOUBLE.fieldOf("provided_happiness").forGetter(RainfallNeed::getProvidedHappiness),
-            Codec.DOUBLE.fieldOf("satisfaction_threshold").forGetter(RainfallNeed::getSatisfactionThreshold),
-            Codec.DOUBLE.fieldOf("frequency").forGetter(RainfallNeed::getFrequency),
-            Codec.BOOL.optionalFieldOf("hidden", DEFAULT_HIDDEN).forGetter(RainfallNeed::isHidden),
-            Codec.BOOL.optionalFieldOf("bonus", DEFAULT_BONUS).forGetter(RainfallNeed::isBonus),
-            ResourceLocation.CODEC.optionalFieldOf("icon").forGetter(Need::getIcon),
+            propertiesCodec(),
             Codec.DOUBLE.fieldOf("min_rainfall").forGetter(RainfallNeed::getMinRainfall),
             Codec.DOUBLE.fieldOf("max_rainfall").forGetter(RainfallNeed::getMaxRainfall)
     ).apply(instance, RainfallNeed::new));
@@ -32,11 +23,8 @@ public class RainfallNeed extends Need {
     private double minRainfall;
     private double maxRainfall;
 
-    public RainfallNeed(String id, double damage, double damageThreshold, double providedHappiness,
-                        double satisfactionThreshold, double frequency, boolean hidden, boolean bonus,
-                        Optional<ResourceLocation> icon,
-                        double minRainfall, double maxRainfall) {
-        super(id, damage, damageThreshold, providedHappiness, satisfactionThreshold, frequency, hidden, bonus, icon);
+    public RainfallNeed(Properties properties, double minRainfall, double maxRainfall) {
+        super(properties);
         this.minRainfall = minRainfall;
         this.maxRainfall = maxRainfall;
     }
