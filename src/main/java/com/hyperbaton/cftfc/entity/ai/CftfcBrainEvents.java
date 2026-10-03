@@ -2,6 +2,7 @@ package com.hyperbaton.cftfc.entity.ai;
 
 import com.hyperbaton.cft.api.event.XoonglinBrainEvent;
 import com.hyperbaton.cftfc.CftfcMod;
+import com.hyperbaton.cftfc.entity.ai.behavior.BurnCharcoalBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.KeepFiresBehavior;
 import net.minecraft.world.entity.schedule.Activity;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,11 +18,13 @@ public class CftfcBrainEvents {
     @SubscribeEvent
     public static void registerMemories(XoonglinBrainEvent.RegisterMemories event) {
         event.addMemory(CftfcMemoryModuleTypes.MUST_KEEP_FIRES.get());
+        event.addMemory(CftfcMemoryModuleTypes.MUST_BURN_CHARCOAL.get());
     }
 
     @SubscribeEvent
     public static void addBehaviors(XoonglinBrainEvent.AddBehaviors event) {
         // Same priority as CFT's own job behaviors
         event.addBehavior(Activity.WORK, 2, new KeepFiresBehavior());
+        event.addBehavior(Activity.WORK, 2, new BurnCharcoalBehavior());
     }
 }

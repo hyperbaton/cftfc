@@ -16,5 +16,14 @@
   "gui.cftfc.work_step.checking_fires": "Checking the fires",
   "gui.cftfc.work_step.fetching_fuel": "Fetching fuel",
   "gui.cftfc.work_step.going_to_fire": "Going to a fire",
-  "gui.cftfc.work_step.tending_fire": "Tending a fire"
+  "gui.cftfc.work_step.tending_fire": "Tending a fire",
+  "structure.cftfc.charcoal_pit": "Charcoal Pit",
+  "job.cftfc.charcoal_burner_job": "Charcoal Burner",
+  "gui.cftfc.work_step.checking_pit": "Checking the pit",
+  "gui.cftfc.work_step.going_to_pit": "Going to the pit",
+  "gui.cftfc.work_step.working_pit": "Working the pit",
+  "gui.cftfc.work_step.lighting_pit": "Lighting the pit",
+  "gui.cftfc.work_step.waiting_for_charcoal": "Waiting for the charcoal",
+  "gui.cftfc.work_step.waiting_for_logs": "Waiting for logs",
+  "gui.cftfc.work_step.waiting_for_cover": "Waiting for cover blocks"
 }

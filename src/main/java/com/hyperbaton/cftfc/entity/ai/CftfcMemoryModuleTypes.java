@@ -16,4 +16,8 @@ public class CftfcMemoryModuleTypes {
     /** Set by the firekeeper job while there's work to do; triggers the keep fires behavior. */
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_KEEP_FIRES =
             MEMORY_TYPES.register("must_keep_fires", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
+
+    /** Set by the charcoal burner job while there's work to do; triggers the burn charcoal behavior. */
+    public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_BURN_CHARCOAL =
+            MEMORY_TYPES.register("must_burn_charcoal", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
 }

@@ -1,0 +1,7 @@
+{
+  "type": "cftfc:charcoal_burner",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:charcoal_pit",
+  "logs_per_pile": 16,
+  "carry": 64
+}

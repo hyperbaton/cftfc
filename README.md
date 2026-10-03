@@ -231,3 +231,46 @@ key block and at least one wooden chest to keep the fuel in.
 
 It also accepts Care For Them's common job properties, such as `required_needs`, `min_happiness` or `schedule`.
 </details>
+
+### Charcoal Burner
+
+The charcoal burner makes charcoal in a TFC charcoal pit. It fills the holes of the pit with log piles, covers them,
+and lights the pit once every hole holds a full, covered log pile. When TFC has turned the logs into charcoal, it
+uncovers each hole, digs the charcoal out into the yard's chests, fills the hole with a new log pile and covers it
+again. It fetches the logs and cover blocks it needs from the yard's chests. Together with the
+[firekeeper](#firekeeper), it keeps a settlement supplied with fuel.
+
+The sample charcoal pit (`cftfc:charcoal_pit`) is an open-air yard fenced with fences and fence gates, with a firepit as
+its key block and at least one wooden chest. To make the pit itself, dig holes **two blocks deep** in the yard's
+ground: the log pile goes at the bottom of the hole, and its cover on top, level with the ground. Holes can be single
+or side by side, as long as each of them is closed in by non-flammable blocks (such as dirt or stone) on every side and
+below; holes that would let the fire out are ignored, and so is any hole that can't be reached from solid ground beside
+it. The burner only lights the pit when every hole in it is ready, and waits for logs or cover blocks otherwise.
+
+<details>
+    <summary>Sample charcoal burner job file</summary>
+
+```json
+{
+  "type": "cftfc:charcoal_burner",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:charcoal_pit",
+  "logs_per_pile": 16,
+  "carry": 64
+}
+```
+- `type`: Must be `"cftfc:charcoal_burner"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure whose ground holds the pit, and whose chests hold its logs, cover blocks and
+  charcoal. Pits are holes below an open-air yard's ground, so this should be an open-air platform whose
+  `surface_blocks` allow both air (open holes) and the cover blocks.
+- `logs_per_pile`: _(Optional, default: 16)_ How many logs it puts in each log pile, up to 16. More logs make more
+  charcoal: TFC turns each log into a quarter to half a piece of charcoal.
+- `logs`: _(Optional, default: any log)_ A list of item ingredients it may stack in log piles. It only ever uses logs
+  TFC accepts in log piles.
+- `cover`: _(Optional, default: `[{"tag": "tfc:dirt"}]`)_ A list of item ingredients it may cover the log piles with.
+  Only blocks that keep the fire in (non-flammable, with a full face) are used.
+- `carry`: _(Optional, default: 64)_ How many logs it takes from the chests at once.
+
+It also accepts Care For Them's common job properties.
+</details>
