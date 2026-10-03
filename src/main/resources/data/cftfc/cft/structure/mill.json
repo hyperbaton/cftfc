@@ -1,0 +1,99 @@
+{
+  "type": "cft:enclosed_building",
+  "key_block": "tfc:quern",
+  "max_users": 1,
+  "requires_container": true,
+  "priority": 0,
+  "floor_blocks": [
+    {
+      "block": "#minecraft:planks",
+      "min_quantity": 0,
+      "max_quantity": 500,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    }
+  ],
+  "wall_blocks": [
+    {
+      "block": "#minecraft:logs",
+      "min_quantity": 0,
+      "max_quantity": 500,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#minecraft:planks",
+      "min_quantity": 0,
+      "max_quantity": 500,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#minecraft:doors",
+      "min_quantity": 1,
+      "max_quantity": 2,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    }
+  ],
+  "interior_blocks": [
+    {
+      "block": "minecraft:air",
+      "min_quantity": 0,
+      "max_quantity": 1000,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "tfc:quern",
+      "min_quantity": 1,
+      "max_quantity": 4,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#c:chests/wooden",
+      "min_quantity": 1,
+      "max_quantity": 4,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "tfc:torch",
+      "min_quantity": 0,
+      "max_quantity": 20,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "tfc:wall_torch",
+      "min_quantity": 0,
+      "max_quantity": 20,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    }
+  ],
+  "roof_blocks": [
+    {
+      "block": "#minecraft:stairs",
+      "min_quantity": 0,
+      "max_quantity": 500,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#minecraft:slabs",
+      "min_quantity": 0,
+      "max_quantity": 500,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#minecraft:planks",
+      "min_quantity": 0,
+      "max_quantity": 500,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    }
+  ]
+}

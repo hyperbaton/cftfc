@@ -274,3 +274,36 @@ it. The burner only lights the pit when every hole in it is ready, and waits for
 
 It also accepts Care For Them's common job properties.
 </details>
+
+### Miller
+
+The miller grinds at the TFC querns of its mill: it loads them with grain (or anything else with a quern recipe) from
+the mill's chests, turns them, and stores what comes out in the same chests. When a handstone wears out, it puts a new
+one from the chests on the quern. With several querns, it works them one at a time, walking to whichever has work.
+Querns turned by a water wheel or windmill grind on their own, so it only loads and empties those.
+
+The sample mill (`cftfc:mill`) is an enclosed building of logs and planks, with a door, a quern as its key block, up
+to 4 querns and at least one wooden chest inside. Keep grain and spare handstones in the chests.
+
+<details>
+    <summary>Sample miller job file</summary>
+
+```json
+{
+  "type": "cftfc:miller",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:mill",
+  "load": 16
+}
+```
+- `type`: Must be `"cftfc:miller"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure whose querns it works, and whose chests hold what it grinds, what comes out and
+  spare handstones.
+- `inputs`: _(Optional, default: anything with a quern recipe)_ A list of item ingredients it may grind, such as
+  `[{"tag": "c:foods/grain"}]` (TFC's grains). Only items with a quern recipe are ever ground.
+- `load`: _(Optional, default: 16)_ How many items it loads into a quern at once. A quern grinds one item every
+  4.5 seconds.
+
+It also accepts Care For Them's common job properties.
+</details>

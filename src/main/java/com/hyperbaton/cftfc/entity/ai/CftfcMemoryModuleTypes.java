@@ -20,4 +20,8 @@ public class CftfcMemoryModuleTypes {
     /** Set by the charcoal burner job while there's work to do; triggers the burn charcoal behavior. */
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_BURN_CHARCOAL =
             MEMORY_TYPES.register("must_burn_charcoal", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
+
+    /** Set by the miller job while there's work to do; triggers the grind behavior. */
+    public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_GRIND =
+            MEMORY_TYPES.register("must_grind", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
 }

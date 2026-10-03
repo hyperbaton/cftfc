@@ -25,5 +25,10 @@
   "gui.cftfc.work_step.lighting_pit": "Lighting the pit",
   "gui.cftfc.work_step.waiting_for_charcoal": "Waiting for the charcoal",
   "gui.cftfc.work_step.waiting_for_logs": "Waiting for logs",
-  "gui.cftfc.work_step.waiting_for_cover": "Waiting for cover blocks"
+  "gui.cftfc.work_step.waiting_for_cover": "Waiting for cover blocks",
+  "structure.cftfc.mill": "Mill",
+  "job.cftfc.miller_job": "Miller",
+  "gui.cftfc.work_step.grinding": "Grinding",
+  "gui.cftfc.work_step.waiting_for_grain": "Waiting for grain",
+  "gui.cftfc.work_step.waiting_for_handstone": "Waiting for a handstone"
 }
