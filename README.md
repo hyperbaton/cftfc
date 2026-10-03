@@ -183,3 +183,51 @@ For instance, this makes Care For Them's built-in warmth need only apply when it
 
 At least one of `categories` or `rocks` is required. The condition holds if the rock layer under the Xoonglin matches
 any of them.
+
+## Jobs
+
+### Firekeeper
+
+The firekeeper keeps the TFC fires around its woodshed burning. It does rounds: it checks which fires within its
+radius need tending, takes fuel from the woodshed's chests, walks to each of those fires (nearest first), fills them up
+with fuel and lights them again if they've gone out. Then it brings back the fuel it has left and waits at the woodshed
+until the next round.
+
+A fire needs tending when it's lit but holds fewer fuel items than `min_fuel`, or when it has gone out (if `relight`
+is on). This pairs well with the [Heat Source Need](#heat-source-need): a firekeeper keeps the firepits by the homes
+burning through the winter.
+
+The sample woodshed (`cftfc:woodshed`) is an open-air yard fenced with fences and fence gates, with a log pile as its
+key block and at least one wooden chest to keep the fuel in.
+
+<details>
+    <summary>Sample firekeeper job file</summary>
+
+```json
+{
+  "type": "cftfc:firekeeper",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:woodshed",
+  "radius": 32,
+  "min_fuel": 2,
+  "carry": 8
+}
+```
+- `type`: Must be `"cftfc:firekeeper"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure it works from, and keeps its fuel in.
+- `radius`: _(Optional, default: 32)_ How far from the structure's key block the fires it tends can be.
+- `fires`: _(Optional, default: `["tfc:firepit", "tfc:grill", "tfc:pot"]`)_ The fire blocks it tends, as block ids or
+  tags (prefixed with `#`). Firepits (with or without a grill or pot) and charcoal forges (`tfc:charcoal_forge`) are
+  supported. Forges are left out by default, so the firekeeper doesn't keep a smith's forge burning charcoal while
+  nobody uses it.
+- `fuel`: _(Optional, default: any fuel)_ A list of item ingredients it may use as fuel, such as
+  `[{"tag": "minecraft:logs"}]`. It only ever uses TFC firepit or forge fuel, and only what each fire accepts.
+- `min_fuel`: _(Optional, default: 2)_ A lit fire is refueled when it holds fewer fuel items than this. A firepit holds
+  4 fuel items, and a charcoal forge 5.
+- `relight`: _(Optional, default: true)_ Whether it lights fires that have gone out. Turn it off if players put out
+  their fires on purpose.
+- `carry`: _(Optional, default: 8)_ How many fuel items it takes from the woodshed for a round.
+
+It also accepts Care For Them's common job properties, such as `required_needs`, `min_happiness` or `schedule`.
+</details>

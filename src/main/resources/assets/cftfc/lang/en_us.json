@@ -10,5 +10,11 @@
   "need.cftfc.tropical_hut_need": "Tropical Hut",
   "need.cftfc.heat_source_need": "Heat Source",
   "need.cftfc.heat_source_need.tooltip": "When it gets colder than 10 °C, wants a lit firepit or forge (at least 200 °C) within 12 blocks.",
-  "structure.cftfc.tropical_hut": "Tropical Hut"
+  "structure.cftfc.tropical_hut": "Tropical Hut",
+  "structure.cftfc.woodshed": "Woodshed",
+  "job.cftfc.firekeeper_job": "Firekeeper",
+  "gui.cftfc.work_step.checking_fires": "Checking the fires",
+  "gui.cftfc.work_step.fetching_fuel": "Fetching fuel",
+  "gui.cftfc.work_step.going_to_fire": "Going to a fire",
+  "gui.cftfc.work_step.tending_fire": "Tending a fire"
 }

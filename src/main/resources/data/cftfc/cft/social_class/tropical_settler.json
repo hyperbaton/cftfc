@@ -7,6 +7,7 @@
     "Ika", "Noa", "Pua", "Koa", "Mele", "Tiki", "Ana", "Ari"
   ],
   "spontaneously_spawn_population": 3,
+  "jobs": ["cftfc:firekeeper_job"],
   "needs": [
     "cftfc:tropical_hut_need",
     "cft:potato_need",

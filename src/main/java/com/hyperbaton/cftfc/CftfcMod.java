@@ -1,5 +1,6 @@
 package com.hyperbaton.cftfc;
 
+import com.hyperbaton.cftfc.entity.ai.CftfcMemoryModuleTypes;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -22,6 +23,8 @@ public class CftfcMod {
     public CftfcMod(IEventBus modEventBus, ModContainer modContainer) {
         CftfcRegistry.NEEDS_CODEC.register(modEventBus);
         CftfcRegistry.NEED_CONDITIONS_CODEC.register(modEventBus);
+        CftfcRegistry.JOBS_CODEC.register(modEventBus);
+        CftfcMemoryModuleTypes.MEMORY_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

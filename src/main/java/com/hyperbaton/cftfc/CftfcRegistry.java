@@ -1,8 +1,10 @@
 package com.hyperbaton.cftfc;
 
 import com.hyperbaton.cft.event.CftDatapackRegistryEvents;
+import com.hyperbaton.cft.job.Job;
 import com.hyperbaton.cft.need.Need;
 import com.hyperbaton.cft.need.condition.NeedCondition;
+import com.hyperbaton.cftfc.job.FirekeeperJob;
 import com.hyperbaton.cftfc.need.HeatSourceNeed;
 import com.hyperbaton.cftfc.need.RainfallNeed;
 import com.hyperbaton.cftfc.need.TemperatureNeed;
@@ -46,4 +48,10 @@ public class CftfcRegistry {
 
     public static DeferredHolder<Codec<? extends NeedCondition>, Codec<RockCondition>> ROCK_CONDITION =
             NEED_CONDITIONS_CODEC.register("rock", () -> RockCondition.CODEC);
+
+    public static final DeferredRegister<Codec<? extends Job>> JOBS_CODEC =
+            DeferredRegister.create(CftDatapackRegistryEvents.JOB_CODEC_KEY, CftfcMod.MOD_ID);
+
+    public static DeferredHolder<Codec<? extends Job>, Codec<FirekeeperJob>> FIREKEEPER_JOB =
+            JOBS_CODEC.register("firekeeper", () -> FirekeeperJob.CODEC);
 }
