@@ -36,5 +36,11 @@
   "gui.cftfc.work_step.checking_sluices": "Checking the sluices",
   "gui.cftfc.work_step.fetching_deposits": "Fetching ore deposits",
   "gui.cftfc.work_step.going_to_sluice": "Going to a sluice",
-  "gui.cftfc.work_step.working_sluice": "Working a sluice"
+  "gui.cftfc.work_step.working_sluice": "Working a sluice",
+  "structure.cftfc.pantry": "Pantry",
+  "job.cftfc.preserver_job": "Preserver",
+  "gui.cftfc.work_step.tending_barrel": "Tending a barrel",
+  "gui.cftfc.work_step.salting": "Salting food",
+  "gui.cftfc.work_step.waiting_for_food": "Waiting for food to preserve",
+  "gui.cftfc.work_step.waiting_for_brine": "Waiting for brine or vinegar"
 }

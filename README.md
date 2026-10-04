@@ -347,3 +347,46 @@ the sluices on streams nearby.
 
 It also accepts Care For Them's common job properties.
 </details>
+
+### Preserver
+
+The preserver preserves food in its pantry the way TFC does, giving it traits that slow down its decay for good:
+
+- **Salted**: it salts meat and fish from the pantry's chests, using one salt (`tfc:powder/salt`) for each piece.
+- **Brined**: it seals fruit, vegetables, meat and fish in barrels of brine.
+- **Pickled**: it seals brined food in barrels of vinegar.
+
+It goes from barrel to barrel: it unseals the ones that are done, moves the preserved food to the chests, loads each
+barrel with as much food as its liquid covers (TFC uses 125 mB per piece), and seals it again. Between barrels, it
+salts food. It only works barrels that hold brine or vinegar, and **keeping them filled is up to you**. Barrels of
+anything else in the pantry are left alone, but any barrel of brine or vinegar in it is the preserver's to use.
+
+Food only keeps the traits TFC makes permanent: food kept sealed in vinegar is also "preserved" while it stays in the
+barrel, but that trait goes away when the barrel is opened, as in TFC. To have Xoonglins ask for preserved food, use a
+goods need whose ingredient checks for a trait, such as `{"type": "tfc:has_trait", "trait": "tfc:pickled"}`.
+
+The sample pantry (`cftfc:pantry`) is an enclosed building of logs and planks, with a door, a barrel as its key block,
+up to 8 barrels and at least one wooden chest inside. `#cftfc:barrels` is a block tag with all of TFC's barrels.
+
+<details>
+    <summary>Sample preserver job file</summary>
+
+```json
+{
+  "type": "cftfc:preserver",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:pantry",
+  "load": 16
+}
+```
+- `type`: Must be `"cftfc:preserver"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure whose barrels it works, and whose chests hold the food, the salt and what it
+  has preserved.
+- `foods`: _(Optional, default: any food)_ A list of item ingredients it may preserve, such as
+  `[{"tag": "c:foods/meat"}]`. It only ever preserves what TFC can.
+- `salt`, `brine`, `pickle`: _(Optional, default: true)_ Whether it salts food, brines it, and pickles it.
+- `load`: _(Optional, default: 16)_ The most pieces of food it seals in a barrel at once.
+
+It also accepts Care For Them's common job properties.
+</details>
