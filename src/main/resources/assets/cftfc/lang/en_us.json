@@ -45,5 +45,11 @@
   "gui.cftfc.work_step.tending_barrel": "Tending a barrel",
   "gui.cftfc.work_step.salting": "Salting food",
   "gui.cftfc.work_step.waiting_for_food": "Waiting for food to preserve",
-  "gui.cftfc.work_step.waiting_for_brine": "Waiting for brine or vinegar"
+  "gui.cftfc.work_step.waiting_for_brine": "Waiting for brine or vinegar",
+  "structure.cftfc.farm": "Farm",
+  "job.cftfc.farmer_job": "Farmer",
+  "gui.cftfc.work_step.tending_crops": "Tending the crops",
+  "gui.cftfc.work_step.clearing_dead_crops": "Clearing dead crops",
+  "gui.cftfc.work_step.waiting_for_seeds": "Waiting for seeds",
+  "gui.cftfc.work_step.waiting_for_season": "Waiting for the right season"
 }

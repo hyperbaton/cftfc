@@ -1,0 +1,8 @@
+{
+  "type": "cftfc:farmer",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:farm",
+  "soil_weight": 0.5,
+  "lookahead": 2,
+  "carry": 32
+}

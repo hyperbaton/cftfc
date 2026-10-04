@@ -1,0 +1,70 @@
+{
+  "type": "cft:open_air_platform",
+  "key_block": "tfc:composter",
+  "max_users": 1,
+  "requires_container": true,
+  "priority": 0,
+  "wall_height": 1,
+  "border_blocks": [
+    {
+      "block": "#minecraft:fences",
+      "min_quantity": 4,
+      "max_quantity": 1000,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#minecraft:fence_gates",
+      "min_quantity": 0,
+      "max_quantity": 4,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "tfc:composter",
+      "min_quantity": 1,
+      "max_quantity": 1,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "#c:chests/wooden",
+      "min_quantity": 1,
+      "max_quantity": 4,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    }
+  ],
+  "ground_perimeter_blocks": [
+    {
+      "block": "#minecraft:planks",
+      "min_quantity": 0,
+      "max_quantity": 1000,
+      "min_percentage": 0.0,
+      "max_percentage": 1.0
+    }
+  ],
+  "surface_blocks": [
+    {
+      "block": "#tfc:farmlands",
+      "min_quantity": 4,
+      "max_quantity": 4096,
+      "min_percentage": 0.5,
+      "max_percentage": 1.0
+    },
+    {
+      "block": "minecraft:water",
+      "min_quantity": 0,
+      "max_quantity": 1024,
+      "min_percentage": 0.0,
+      "max_percentage": 0.25
+    },
+    {
+      "block": "#minecraft:dirt",
+      "min_quantity": 0,
+      "max_quantity": 1024,
+      "min_percentage": 0.0,
+      "max_percentage": 0.25
+    }
+  ]
+}

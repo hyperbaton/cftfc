@@ -437,3 +437,65 @@ up to 8 barrels and at least one wooden chest inside. `#cftfc:barrels` is a bloc
 
 It also accepts Care For Them's common job properties.
 </details>
+### Farmer
+
+The farmer farms the farmland of its farm the way TFC farming works, and never touches farmland outside it. Each round
+it harvests the ripe crops and clears the dead ones, stores the harvest in the farm's chests, and sows the empty
+farmland with seeds from those chests, spreading fertilizer first when the crop would lack something.
+
+Farmland that touches makes a **plot**, and all of a plot's empty blocks get the same crop. To choose it, the farmer
+looks at the seeds the farm has and, for each of them:
+
+- **The weather to come.** It forecasts the temperature and the farmland's hydration over the crop's growing time, and
+  only sows crops that would grow through most of it and never die of cold, heat, drought or flooding. Seasons,
+  hemispheres and latitude come with the forecast: in autumn it may only find cold-hardy crops to sow, and in winter
+  it waits for the right season.
+- **The soil.** In TFC each crop takes some of the soil's nitrogen, phosphorus and potassium, and gives back some of
+  the others: cereals take nitrogen, legumes give it back, cover crops like alfalfa give back all three. A crop yields
+  fully only while the soil holds what it takes. The farmer scores each crop by the harvest it expects, times the
+  crop's `weight`, plus how healthy the soil is left, looking a few crops ahead. So it **rotates crops** on its own:
+  after wheat has used the nitrogen, it sows soybeans, which don't need it and put it back.
+- **Fertilizer.** It counts the fertilizer in the chests as part of the soil, and when sowing it spreads what makes up
+  most of what the crop lacks, wasting the least. Any fertilizer TFC knows works (compost, guano, saltpeter...).
+
+It only sows crops one block tall that grow on dry farmland: cereals, roots, cabbage, onion, garlic, squash, legumes
+like soybean and peanut, and cover crops. Climbing, double, spreading and pickable crops, and rice, are left to you;
+it doesn't harvest those either.
+
+The sample farm (`cftfc:farm`) is an open-air area fenced in, with a TFC composter in the fence as its key block and one
+to four wooden chests in it too. Its ground is mostly TFC farmland, with some water and dirt allowed. How big a farm can
+be is up to Care For Them's maximum structure size.
+
+<details>
+    <summary>Sample farmer job file</summary>
+
+```json
+{
+  "type": "cftfc:farmer",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:farm",
+  "crops": [
+    { "seed": "tfc:seeds/wheat", "weight": 1.5 },
+    { "seed": "tfc:seeds/soybean" },
+    { "seed": "tfc:seeds/alfalfa", "weight": 0.2 }
+  ],
+  "soil_weight": 0.5,
+  "lookahead": 2,
+  "carry": 32
+}
+```
+- `type`: Must be `"cftfc:farmer"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure whose farmland it farms, and whose chests hold the seeds, the fertilizer and the
+  harvest.
+- `crops`: _(Optional, default: any crop it has seeds for, with weight 1)_ The crops it may sow, by their `seed`, and
+  how much it values each crop's harvest (`weight`, default 1). A crop with weight 0 is only sown for the soil.
+- `fertilize`: _(Optional, default: true)_ Whether it spreads fertilizer.
+- `fertilizers`: _(Optional, default: any fertilizer)_ A list of item ingredients it may use as fertilizer.
+- `soil_weight`: _(Optional, default: 0.5)_ How much it values healthy soil left behind, against the harvest. Higher
+  values make it rotate crops sooner, and sow cover crops more.
+- `lookahead`: _(Optional, default: 2, from 1 to 3)_ How many crops ahead it plans each plot.
+- `carry`: _(Optional, default: 32)_ The most seeds of a kind, and the most fertilizer, it takes from the chests at once.
+
+It also accepts Care For Them's common job properties.
+</details>

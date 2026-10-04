@@ -7,6 +7,7 @@ import com.hyperbaton.cftfc.entity.ai.behavior.GrindBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.KeepFiresBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.PreserveBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.ProspectBehavior;
+import com.hyperbaton.cftfc.entity.ai.behavior.TendFieldsBehavior;
 import net.minecraft.world.entity.schedule.Activity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -25,6 +26,7 @@ public class CftfcBrainEvents {
         event.addMemory(CftfcMemoryModuleTypes.MUST_GRIND.get());
         event.addMemory(CftfcMemoryModuleTypes.MUST_PROSPECT.get());
         event.addMemory(CftfcMemoryModuleTypes.MUST_PRESERVE.get());
+        event.addMemory(CftfcMemoryModuleTypes.MUST_FARM.get());
     }
 
     @SubscribeEvent
@@ -35,5 +37,6 @@ public class CftfcBrainEvents {
         event.addBehavior(Activity.WORK, 2, new GrindBehavior());
         event.addBehavior(Activity.WORK, 2, new ProspectBehavior());
         event.addBehavior(Activity.WORK, 2, new PreserveBehavior());
+        event.addBehavior(Activity.WORK, 2, new TendFieldsBehavior());
     }
 }
