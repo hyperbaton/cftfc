@@ -499,3 +499,45 @@ be is up to Care For Them's maximum structure size.
 
 It also accepts Care For Them's common job properties.
 </details>
+
+### Composter
+
+The composter makes compost, TFC's fertilizer, in the composters of its compost yard. On each round it takes out the
+compost of the composters that are done, and fills the others with green and brown items from the yard's chests. It
+then stores the compost in the chests, ready for a [farmer](#farmer) or for you.
+
+It fills composters the way TFC does when you add items by hand, so TFC's rules hold. Each composter takes 16 worth of
+greens (fruit, vegetables, grain, plants...) and 16 of browns (leaves, wood ash, jute, humus, pinecones...). High-value
+items count for 4 and low-value ones for 1. The composter is done about 12 days after its last addition. It picks the
+items that make up what each composter needs while wasting the least, and **never adds anything that rots the compost**:
+meat, bones or rotten food. If a composter rots anyway, because someone else spoiled it, it empties out the rotten
+compost and stores it too.
+
+Composters work slower in very dry or very wet regions (below 150 mm or above 350 mm of rainfall), and when they touch
+each other, so leave a gap between them.
+
+The sample compost yard (`cftfc:compost_yard`) is an open-air area fenced in, with composters in the fence (one of them
+is its key block) or standing on its ground, and one to four wooden chests in the fence. Its ground is dirt or gravel,
+which tells it apart from a [farm](#farmer), whose key block is also a composter.
+
+<details>
+    <summary>Sample composter job file</summary>
+
+```json
+{
+  "type": "cftfc:composter",
+  "hours_per_day": 6.0,
+  "required_structure": "cftfc:compost_yard",
+  "carry": 32
+}
+```
+- `type`: Must be `"cftfc:composter"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure whose composters it tends, and whose chests hold the green and brown items and
+  the compost.
+- `materials`: _(Optional, default: anything the composter takes)_ A list of item ingredients it may compost, such as
+  `[{"tag": "minecraft:leaves"}, {"tag": "c:foods/vegetable"}]`. It never composts what would rot the compost.
+- `carry`: _(Optional, default: 32)_ The most items it takes from the chests at once.
+
+It also accepts Care For Them's common job properties.
+</details>

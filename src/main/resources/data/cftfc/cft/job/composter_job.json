@@ -1,0 +1,6 @@
+{
+  "type": "cftfc:composter",
+  "hours_per_day": 6.0,
+  "required_structure": "cftfc:compost_yard",
+  "carry": 32
+}

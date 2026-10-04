@@ -36,4 +36,8 @@ public class CftfcMemoryModuleTypes {
     /** Set by the farmer job while there's work to do; triggers the tend fields behavior. */
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_FARM =
             MEMORY_TYPES.register("must_farm", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
+
+    /** Set by the composter job while there's work to do; triggers the compost behavior. */
+    public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_COMPOST =
+            MEMORY_TYPES.register("must_compost", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
 }

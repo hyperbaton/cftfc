@@ -3,6 +3,7 @@ package com.hyperbaton.cftfc.entity.ai;
 import com.hyperbaton.cft.api.event.XoonglinBrainEvent;
 import com.hyperbaton.cftfc.CftfcMod;
 import com.hyperbaton.cftfc.entity.ai.behavior.BurnCharcoalBehavior;
+import com.hyperbaton.cftfc.entity.ai.behavior.CompostBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.GrindBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.KeepFiresBehavior;
 import com.hyperbaton.cftfc.entity.ai.behavior.PreserveBehavior;
@@ -27,6 +28,7 @@ public class CftfcBrainEvents {
         event.addMemory(CftfcMemoryModuleTypes.MUST_PROSPECT.get());
         event.addMemory(CftfcMemoryModuleTypes.MUST_PRESERVE.get());
         event.addMemory(CftfcMemoryModuleTypes.MUST_FARM.get());
+        event.addMemory(CftfcMemoryModuleTypes.MUST_COMPOST.get());
     }
 
     @SubscribeEvent
@@ -38,5 +40,6 @@ public class CftfcBrainEvents {
         event.addBehavior(Activity.WORK, 2, new ProspectBehavior());
         event.addBehavior(Activity.WORK, 2, new PreserveBehavior());
         event.addBehavior(Activity.WORK, 2, new TendFieldsBehavior());
+        event.addBehavior(Activity.WORK, 2, new CompostBehavior());
     }
 }
