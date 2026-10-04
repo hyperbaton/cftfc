@@ -118,6 +118,53 @@ The need checks the actual temperature of the heat source, so an unlit or cold f
   to count. Can be used to prevent satisfaction near extremely hot sources like blast furnaces.
 </details>
 
+## Nutrition Need
+
+A balanced diet, based on TFC's five nutrients: grain, fruit, vegetables, protein and dairy. The Xoonglin remembers its
+last meals, and the need is satisfied while those meals provide enough of each nutrient it needs, according to TFC's
+nutrition values of each food (bread gives 1.5 grain, cooked beef 2.5 protein, cheese 3 dairy...).
+
+When the need comes due, the Xoonglin eats the food it carries that best balances its diet, counting that its oldest
+meal will be forgotten. It only eats food that keeps its diet balanced or makes it better, so it won't eat its way
+through a pile of bread when it lacks fruit. While its diet lacks a nutrient, it fetches food rich in that nutrient from
+its home, just like with a goods need. Rotten food never counts.
+
+<details>
+    <summary>Sample nutrition need file</summary>
+
+```json
+{
+  "type": "cftfc:nutrition",
+  "damage": 0.2,
+  "damage_threshold": 0.25,
+  "provided_happiness": 6,
+  "satisfaction_threshold": 0.6,
+  "frequency": 0.33,
+  "nutrients": ["grain", "fruit", "vegetables", "protein"],
+  "meals": 5,
+  "min_amount": 0.5
+}
+```
+- `type`: Must be `"cftfc:nutrition"` to indicate this is a nutrition need.
+- `frequency`: As in other needs, how long its satisfaction lasts; it eats a meal each time the need comes due.
+- `nutrients`: A nutrient or list of nutrients its diet has to provide: `grain`, `fruit`, `vegetables`, `protein` or
+  `dairy`.
+- `meals`: _(Optional, default: 5)_ How many of its last meals it remembers. With fewer meals than nutrients, it can't
+  ever be satisfied.
+- `min_amount`: _(Optional, default: 0.5)_ How much of each nutrient its remembered meals have to provide together.
+</details>
+
+### Nutrient ingredient
+
+CFTFC also adds an ingredient type that matches food rich in a nutrient, which isn't rotten. It can be used wherever an
+ingredient is, for instance in a goods need, to ask for any dairy food rather than for a specific item:
+
+```json
+"item": { "type": "cftfc:nutrient", "nutrient": "dairy", "min": 1.0 }
+```
+- `nutrient`: `grain`, `fruit`, `vegetables`, `protein` or `dairy`.
+- `min`: _(Optional, default: 0.5)_ How much of the nutrient the food has to provide.
+
 ## Need Conditions
 
 Conditions go in the `active_when` list of a need. While its conditions don't hold, a need is inactive: it is not

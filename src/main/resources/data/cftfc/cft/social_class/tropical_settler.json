@@ -10,13 +10,7 @@
   "jobs": ["cftfc:firekeeper_job", "cftfc:charcoal_burner_job", "cftfc:miller_job", "cftfc:prospector_job", "cftfc:preserver_job"],
   "needs": [
     "cftfc:tropical_hut_need",
-    "cft:potato_need",
-    "cft:wood_logs_need",
-    "cftfc:high_temperature_need",
-    "cftfc:high_rainfall_need",
-    "cftfc:heat_source_need",
-    "cft:sleep_need",
-    "cft:conversation_need"
+    "cftfc:balanced_diet_need"
   ],
   "upgrades": [
     {

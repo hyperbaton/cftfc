@@ -24,6 +24,7 @@ public class CftfcMod {
         CftfcRegistry.NEEDS_CODEC.register(modEventBus);
         CftfcRegistry.NEED_CONDITIONS_CODEC.register(modEventBus);
         CftfcRegistry.JOBS_CODEC.register(modEventBus);
+        CftfcRegistry.INGREDIENT_TYPES.register(modEventBus);
         CftfcMemoryModuleTypes.MEMORY_TYPES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);

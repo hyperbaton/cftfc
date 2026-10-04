@@ -9,7 +9,9 @@ import com.hyperbaton.cftfc.job.FirekeeperJob;
 import com.hyperbaton.cftfc.job.MillerJob;
 import com.hyperbaton.cftfc.job.PreserverJob;
 import com.hyperbaton.cftfc.job.ProspectorJob;
+import com.hyperbaton.cftfc.ingredient.NutrientIngredient;
 import com.hyperbaton.cftfc.need.HeatSourceNeed;
+import com.hyperbaton.cftfc.need.NutritionNeed;
 import com.hyperbaton.cftfc.need.RainfallNeed;
 import com.hyperbaton.cftfc.need.TemperatureNeed;
 import com.hyperbaton.cftfc.need.condition.ClimateCondition;
@@ -18,8 +20,10 @@ import com.hyperbaton.cftfc.need.condition.RockCondition;
 import com.hyperbaton.cftfc.need.condition.SeasonCondition;
 import com.hyperbaton.cftfc.need.condition.TemperatureCondition;
 import com.mojang.serialization.Codec;
+import net.neoforged.neoforge.common.crafting.IngredientType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class CftfcRegistry {
 
@@ -34,6 +38,15 @@ public class CftfcRegistry {
 
     public static DeferredHolder<Codec<? extends Need>, Codec<HeatSourceNeed>> HEAT_SOURCE_NEED =
             NEEDS_CODEC.register("heat_source", () -> HeatSourceNeed.HEAT_SOURCE_NEED_CODEC);
+
+    public static DeferredHolder<Codec<? extends Need>, Codec<NutritionNeed>> NUTRITION_NEED =
+            NEEDS_CODEC.register("nutrition", () -> NutritionNeed.NUTRITION_NEED_CODEC);
+
+    public static final DeferredRegister<IngredientType<?>> INGREDIENT_TYPES =
+            DeferredRegister.create(NeoForgeRegistries.Keys.INGREDIENT_TYPES, CftfcMod.MOD_ID);
+
+    public static DeferredHolder<IngredientType<?>, IngredientType<NutrientIngredient>> NUTRIENT_INGREDIENT =
+            INGREDIENT_TYPES.register("nutrient", () -> new IngredientType<>(NutrientIngredient.CODEC));
 
     public static final DeferredRegister<Codec<? extends NeedCondition>> NEED_CONDITIONS_CODEC =
             DeferredRegister.create(CftDatapackRegistryEvents.NEED_CONDITION_CODEC_KEY, CftfcMod.MOD_ID);
