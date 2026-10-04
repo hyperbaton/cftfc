@@ -1,0 +1,8 @@
+{
+  "type": "cftfc:prospector",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:prospectors_camp",
+  "radius": 24,
+  "min_load": 8,
+  "carry": 32
+}

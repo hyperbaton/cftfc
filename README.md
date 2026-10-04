@@ -307,3 +307,43 @@ to 4 querns and at least one wooden chest inside. Keep grain and spare handstone
 
 It also accepts Care For Them's common job properties.
 </details>
+
+### Prospector
+
+The prospector works the TFC sluices around its camp. It does rounds: it checks which sluices within its radius are
+running low on ore deposits or have washed something out, takes deposits from the camp's chests, walks to each of those
+sluices (nearest first), picks up what they washed out and loads them with deposits. Then it brings what it found back
+to the camp's chests, and waits there until the next round.
+
+Only sluices with water running through them count. What it brings back to the camp is only what it picked up at the
+sluices, never the Xoonglin's own belongings.
+
+The sample prospector's camp (`cftfc:prospectors_camp`) is an open-air yard fenced with fences and fence gates, with a
+TFC workbench as its key block and at least one wooden chest to keep the deposits and what the sluices wash out. Build
+the sluices on streams nearby.
+
+<details>
+    <summary>Sample prospector job file</summary>
+
+```json
+{
+  "type": "cftfc:prospector",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:prospectors_camp",
+  "radius": 24,
+  "min_load": 8,
+  "carry": 32
+}
+```
+- `type`: Must be `"cftfc:prospector"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure it works from, whose chests hold the deposits and what the sluices wash out.
+- `radius`: _(Optional, default: 24)_ How far from the structure's key block the sluices it works can be.
+- `inputs`: _(Optional, default: anything a sluice washes)_ A list of item ingredients it may load into sluices, such
+  as `[{"tag": "tfc:ore_deposits"}]`.
+- `min_load`: _(Optional, default: 8)_ A sluice is loaded again when it holds fewer deposits than this. A sluice holds
+  up to 32.
+- `carry`: _(Optional, default: 32)_ How many deposits it takes from the camp for a round.
+
+It also accepts Care For Them's common job properties.
+</details>

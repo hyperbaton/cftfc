@@ -30,5 +30,11 @@
   "job.cftfc.miller_job": "Miller",
   "gui.cftfc.work_step.grinding": "Grinding",
   "gui.cftfc.work_step.waiting_for_grain": "Waiting for grain",
-  "gui.cftfc.work_step.waiting_for_handstone": "Waiting for a handstone"
+  "gui.cftfc.work_step.waiting_for_handstone": "Waiting for a handstone",
+  "structure.cftfc.prospectors_camp": "Prospector's Camp",
+  "job.cftfc.prospector_job": "Prospector",
+  "gui.cftfc.work_step.checking_sluices": "Checking the sluices",
+  "gui.cftfc.work_step.fetching_deposits": "Fetching ore deposits",
+  "gui.cftfc.work_step.going_to_sluice": "Going to a sluice",
+  "gui.cftfc.work_step.working_sluice": "Working a sluice"
 }

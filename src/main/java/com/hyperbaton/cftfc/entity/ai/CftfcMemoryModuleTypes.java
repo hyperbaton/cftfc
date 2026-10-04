@@ -24,4 +24,8 @@ public class CftfcMemoryModuleTypes {
     /** Set by the miller job while there's work to do; triggers the grind behavior. */
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_GRIND =
             MEMORY_TYPES.register("must_grind", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
+
+    /** Set by the prospector job while there's work to do; triggers the prospect behavior. */
+    public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_PROSPECT =
+            MEMORY_TYPES.register("must_prospect", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
 }
