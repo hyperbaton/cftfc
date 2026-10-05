@@ -4,6 +4,7 @@ import com.hyperbaton.cft.event.CftDatapackRegistryEvents;
 import com.hyperbaton.cft.job.Job;
 import com.hyperbaton.cft.need.Need;
 import com.hyperbaton.cft.need.condition.NeedCondition;
+import com.hyperbaton.cftfc.job.BarrelKeeperJob;
 import com.hyperbaton.cftfc.job.CharcoalBurnerJob;
 import com.hyperbaton.cftfc.job.ComposterJob;
 import com.hyperbaton.cftfc.job.FarmerJob;
@@ -91,4 +92,7 @@ public class CftfcRegistry {
 
     public static DeferredHolder<Codec<? extends Job>, Codec<ComposterJob>> COMPOSTER_JOB =
             JOBS_CODEC.register("composter", () -> ComposterJob.CODEC);
+
+    public static DeferredHolder<Codec<? extends Job>, Codec<BarrelKeeperJob>> BARREL_KEEPER_JOB =
+            JOBS_CODEC.register("barrel_keeper", () -> BarrelKeeperJob.CODEC);
 }

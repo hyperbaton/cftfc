@@ -541,3 +541,64 @@ which tells it apart from a [farm](#farmer), whose key block is also a composter
 
 It also accepts Care For Them's common job properties.
 </details>
+
+### Barrel Keeper
+
+The barrel keeper makes liquids in the barrels of its barrel yard. You don't tell it how: it looks at the liquids the
+yard has (in its barrels, wells, aqueducts...) and the items in its chests, and works out what it can make from them
+with **TFC's own barrel recipes**, including those added by other mods or datapacks. Then it makes **as much as it
+can**, starting a new batch whenever it has an empty barrel and the ingredients for it, and sharing its barrels among
+the liquids it can make. With water, apples and salt, for instance, it makes vinegar and brine:
+
+1. it fills a barrel with water, one bucket at a time, and seals it with apples to brew cider;
+2. it seals the cider with more fruit to make vinegar;
+3. in another barrel, it salts water into salt water, and pours in some of that vinegar to make brine.
+
+By default it makes the liquids that recipes end in, the ones no barrel turns into another liquid: brine, vinegar,
+tannin, limewater, curdled milk... Liquids on the way, like cider or salt water, it only makes to go on with them. A
+`products` list in the job limits it to the liquids listed, and lets you list one that's on the way to others, like
+beer. Either way, it makes the liquids a recipe needs poured in, like vinegar for brine, as they're needed.
+
+The liquids stay in their barrels for someone else to take. It never moves them to other workplaces.
+
+It plans each barrel so that nothing goes to waste. In TFC a barrel converts all of its liquid at once, and any liquid
+that doesn't make up a whole recipe is lost. So the keeper fills each barrel with only as much as every step can
+convert with the items it has: no more than the barrel holds, no more items than fit in its slot, and no more of a
+second liquid than one bucket carries. A barrel that holds more than that, such as one you filled yourself, gets split
+into another barrel first. It doesn't start a batch whose second liquid it neither has nor can make.
+
+What it needs:
+- **Liquid sources in the yard**: water source blocks in its ground, an aqueduct, or any other block holding liquid
+  (not its barrels). It draws from source blocks without using them up, as from a well. Water in its own barrels,
+  such as rain, is used where it is.
+- **A bucket** (or any other liquid container) in the yard's chests. A TFC wooden bucket is best, because it can carry
+  part of a bucket, which some recipes need.
+- **The items its recipes take** in the yard's chests: salt, flour, fruit... Each barrel's slot only takes one kind of
+  item at a time, so it counts each kind on its own.
+- **Empty barrels** to work with. It leaves alone barrels holding liquids it doesn't make, and those holding what it
+  made, until they're emptied.
+
+The sample barrel yard (`cftfc:barrel_yard`) is an open-air area fenced in, with a cauldron in the fence as its key
+block and one to four wooden chests in the fence too. Its ground is paved with stone: cobblestone, smooth stone or stone
+bricks. The barrels stand on that ground, inside the yard. TFC aqueducts may run through the fence and along the ground
+to bring water in, and the ground may also have some water as a well. A cauldron of water also serves as a source.
+
+<details>
+    <summary>Sample barrel keeper job file</summary>
+
+```json
+{
+  "type": "cftfc:barrel_keeper",
+  "hours_per_day": 8.0,
+  "required_structure": "cftfc:barrel_yard",
+  "products": ["tfc:brine", "tfc:vinegar"]
+}
+```
+- `type`: Must be `"cftfc:barrel_keeper"`.
+- `hours_per_day`: How many hours a day it works.
+- `required_structure`: The structure whose barrels it works, and whose chests hold the bucket and the items.
+- `products`: _(Optional, default: every liquid recipes end in)_ The only liquids it makes, besides those on the way
+  to them and those their recipes need poured in.
+
+It also accepts Care For Them's common job properties.
+</details>

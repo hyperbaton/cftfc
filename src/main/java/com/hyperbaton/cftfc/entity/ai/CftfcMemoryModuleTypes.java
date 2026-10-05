@@ -40,4 +40,8 @@ public class CftfcMemoryModuleTypes {
     /** Set by the composter job while there's work to do; triggers the compost behavior. */
     public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_COMPOST =
             MEMORY_TYPES.register("must_compost", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
+
+    /** Set by the barrel keeper job while there's work to do; triggers the keep barrels behavior. */
+    public static final DeferredHolder<MemoryModuleType<?>, MemoryModuleType<Boolean>> MUST_KEEP_BARRELS =
+            MEMORY_TYPES.register("must_keep_barrels", () -> new MemoryModuleType<>(Optional.of(Codec.BOOL)));
 }

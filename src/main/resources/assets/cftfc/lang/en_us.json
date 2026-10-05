@@ -58,5 +58,14 @@
   "gui.cftfc.work_step.going_to_composter": "Going to a composter",
   "gui.cftfc.work_step.tending_composter": "Tending a composter",
   "gui.cftfc.work_step.waiting_for_compost_materials": "Waiting for greens and browns",
-  "gui.cftfc.work_step.waiting_for_compost": "Waiting for the compost"
+  "gui.cftfc.work_step.waiting_for_compost": "Waiting for the compost",
+  "structure.cftfc.barrel_yard": "Barrel Yard",
+  "job.cftfc.barrel_keeper_job": "Barrel Keeper",
+  "gui.cftfc.work_step.checking_barrels": "Checking the barrels",
+  "gui.cftfc.work_step.drawing_liquid": "Drawing liquid",
+  "gui.cftfc.work_step.going_to_barrel": "Going to a barrel",
+  "gui.cftfc.work_step.waiting_for_ingredients": "Waiting for ingredients",
+  "gui.cftfc.work_step.waiting_for_container": "Waiting for a bucket",
+  "gui.cftfc.work_step.waiting_for_barrels": "Waiting for the barrels",
+  "gui.cftfc.work_step.waiting_for_empty_barrel": "Waiting for an empty barrel"
 }

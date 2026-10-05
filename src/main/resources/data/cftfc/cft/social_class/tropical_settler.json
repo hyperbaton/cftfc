@@ -7,7 +7,7 @@
     "Ika", "Noa", "Pua", "Koa", "Mele", "Tiki", "Ana", "Ari"
   ],
   "spontaneously_spawn_population": 3,
-  "jobs": ["cftfc:firekeeper_job", "cftfc:charcoal_burner_job", "cftfc:miller_job", "cftfc:prospector_job", "cftfc:preserver_job", "cftfc:farmer_job", "cftfc:composter_job"],
+  "jobs": ["cftfc:firekeeper_job", "cftfc:charcoal_burner_job", "cftfc:miller_job", "cftfc:prospector_job", "cftfc:preserver_job", "cftfc:farmer_job", "cftfc:composter_job", "cftfc:barrel_keeper_job"],
   "needs": [
     "cftfc:tropical_hut_need",
     "cftfc:balanced_diet_need"
